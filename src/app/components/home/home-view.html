@@ -1,0 +1,36 @@
+<!-- Add your site or application content here -->
+<header>
+    <h1>Google<span>MapsAPI</span></h1>
+</header>
+
+<div class="container">
+
+
+
+    <section class="image-gallery col-xs-12">
+
+            <div class="spinner" ng-if="Home.loading"></div>
+
+              Google Maps
+
+              <div map-lazy-load="https://maps.google.com/maps/api/js">
+                <ng-map center="41,-97" zoom="3"></ng-map>
+              </div>
+              <div ng-if="!Home.loading">
+                <!-- loader content -->
+
+
+
+
+
+              </div>
+
+
+
+
+
+        <div class="clearfix"></div>
+    </section>
+
+    <div class="clearfix"></div>
+</div>
