@@ -20,15 +20,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
     <title>{{ appName }}</title>
 
-</head>
-
-<body>
-    <!--[if lt IE 8]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <ui-view></ui-view>
-
     <!--Libraries-->
     <script type="text/javascript" src="assets/libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="assets/libs/angular/angular.min.js"></script>
@@ -46,6 +37,17 @@
     <!-- ===== 3.Home Controller ===== -->
     <script type="text/javascript" src="app/components/home/home-services.js"></script>
     <script type="text/javascript" src="app/components/home/home-controller.js"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <ui-view></ui-view>
+
+
 
 </body>
 

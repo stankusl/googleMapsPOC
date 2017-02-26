@@ -6,7 +6,7 @@
         // Controller Variables
         self = this;
         self.pictures = [];
-        self.loading = true;
+        self.loading = false;
 
         // NgMap.getMap().then(function(map) {
         //   console.log(map.getCenter());
