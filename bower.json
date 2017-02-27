@@ -16,7 +16,9 @@
     "angular-bootstrap": "latest",
     "angular-ui-router": "latest",
     "angular-sanitize": "latest",
-    "ngmap": "^1.17.8"
+    "ngmap": "^1.17.8",
+    "lodash": "^4.17.4",
+    "angular-simple-logger" : "latest"
   },
   "devDependencies": {}
 }
