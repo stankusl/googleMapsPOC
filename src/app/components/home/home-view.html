@@ -3,6 +3,10 @@
     <h1>Google<span>MapsAPI</span></h1>
 </header>
 
+<script type="text/ng-template" id="control.tpl.html">
+    <button class="btn btn-sm btn-primary" ng-class="{'btn-warning': danger}" ng-click="controlClick()">Test Button</button>
+</script>
+
 <div class="container">
 
 
@@ -11,27 +15,44 @@
 
             <div class="spinner" ng-if="Home.loading"></div>
 
-              Google Maps<br>
+
+
+              <ui-gmap-google-map center="map.center" options="Home.options" zoom="map.zoom">
+
+                <ui-gmap-circle
+                 ng-repeat="c in circles track by c.id"
+                 center="c.center"
+                 stroke="c.stroke"
+                 fill="c.fill"
+                 radius="c.radius"
+                 visible="c.visible"
+                 geodesic="c.geodesic"
+                 editable="c.editable"
+                 draggable="c.draggable"
+                 clickable="c.clickable"
+                 control="c.control">
+
+                 </ui-gmap-circle>
+
+                 <ui-gmap-map-control template="control.tpl.html" position="top-right" controller="controlCtrl" index="-1"></ui-gmap-map-control>
+                 <ui-gmap-map-control>
+                       <button class="btn btn-sm btn-primary" ng-click="controlClick()">Test Custom Button</button>
+                 </ui-gmap-map-control>
+
+                 <ui-gmap-polygon static="true" ng-repeat="p in polygons track by p.id" path="p.path" stroke="p.stroke" visible="p.visible"
+                    geodesic="p.geodesic" fill="p.fill" fit="false" editable="p.editable" draggable="p.draggable"></ui-gmap-polygon>
+
+
+              </ui-gmap-google-map>
+              <br>
+              Google Maps
+              <br>
 
               <button ng-click="Home.newLocationIsHome()" class="btn btn-primary">Take Home</button>
-
               <button ng-click="Home.newLocationIsOffice()" class="btn btn-primary">Go To Office</button>
+              <br>
 
-              <ui-gmap-google-map center="map.center" options="Home.options" zoom="map.zoom"></ui-gmap-google-map>
-
-
-              <div ng-if="!Home.loading">
-                <!-- loader content -->
-
-
-
-
-
-              </div>
-
-
-
-
+              <div ng-if="!Home.loading"></div>
 
         <div class="clearfix"></div>
     </section>
