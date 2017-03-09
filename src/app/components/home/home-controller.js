@@ -1,12 +1,25 @@
 (function() {
     'use strict'
-    angular.module('application').controller('HomeController', ['HomeServices', '$scope', 'uiGmapGoogleMapApi', HomeController]);
+    angular.module('application').controller('HomeController', ['HomeServices', '$scope', 'uiGmapGoogleMapApi', 'ngGPlacesAPI', HomeController]);
 
-    function HomeController(HomeServices, $scope, uiGmapGoogleMapApi) {
+    function HomeController(HomeServices, $scope, uiGmapGoogleMapApi, ngGPlacesAPI) {
         // Controller Variables
         var self = this;
         self.pictures = [];
         self.loading = false;
+
+
+
+        self.showDetails = function(locationReference) {
+          ngGPlacesAPI.placeDetails({reference: locationReference})
+          .then(function (result) {
+              self.details = result;
+          });
+        }
+
+        ngGPlacesAPI.nearbySearch({latitude: 51.5028777, longitude: -0.0864282 }).then(function(result){
+            self.nearBy = result;
+        });
 
         $scope.circles = [
          {

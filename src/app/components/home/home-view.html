@@ -52,6 +52,21 @@
               <button ng-click="Home.newLocationIsOffice()" class="btn btn-primary">Go To Office</button>
               <br>
 
+              <div class="col-xs-6">
+                <h2>Google API Places</h2>
+                <ul>
+                  <li ng-repeat="pointOfInterest in Home.nearBy " ng-click="Home.showDetails(pointOfInterest.reference)">{{ pointOfInterest.name }}</li>
+                </ul>
+              </div>
+
+              <div class="col-xs-6">
+                <h2>Place Details</h2>
+                <p>Address: {{ Home.details.formatted_address }}</p>
+                <p>Phone:{{ Home.details.formatted_phone_number }}</p>
+                <p>Website:{{ Home.details.website }}</p>
+              </div>
+
+
               <div ng-if="!Home.loading"></div>
 
         <div class="clearfix"></div>
