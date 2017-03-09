@@ -17,7 +17,13 @@
           });
         }
 
-        ngGPlacesAPI.nearbySearch({latitude: 51.5028777, longitude: -0.0864282 }).then(function(result){
+
+        ngGPlacesAPI.nearbySearch(
+          {
+            latitude: 51.5028777,
+            longitude: -0.0864282,
+            types: ['subway_station']
+          }).then(function(result){
             self.nearBy = result;
         });
 
