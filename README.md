@@ -1,3 +1,5 @@
+# This is proof of concept for Google Maps API
+
 ### Preacquisitions
 * NodeJS : http://nodejs.org
 * bower : npm install -g bower
