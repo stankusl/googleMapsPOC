@@ -4,15 +4,13 @@
     // Single Page Application - just because.
     angular.module('application', ['ui.router', 'uiGmapgoogle-maps', 'ngGPlaces', 'ngMap'])
 
-    .config( ['uiGmapGoogleMapApiProvider', function(GoogleMapApiProviders) {
-            GoogleMapApiProviders.configure({
-                key: 'AIzaSyCuCy0Mx3tj0A6AFk1oF02VIDv_rYyVEY8',
-                v: '3.28',
-                libraries: 'weather,geometry,visualization',
-                china: true
-            });
-        }]
-    )
+    .config(['uiGmapGoogleMapApiProvider', function (GoogleMapApi) {
+      GoogleMapApi.configure({
+        key: 'AIzaSyDR5BMPcNmdr9gD8SpIPHCYBGuJNqnUrJQ',
+        v: '3.20',
+        libraries: 'weather,geometry,visualization'
+      });
+    }])
 
     .run(['$rootScope', '$state', function($rootScope, $state) {
 

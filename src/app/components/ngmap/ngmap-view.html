@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-4">
-      <h1>Properties</h1>
+      <h2>Properties</h2>
 
       <ul>
         <li ng-repeat="property in NgMap.properties">
@@ -11,9 +11,18 @@
     </div>
 
     <div class="col-xs-8">
-      <h1>Map</h1>
+      <h2>Map</h2>
 
-    
+       <ng-map center="[51.608403, -0.0708741]">
+
+         <marker ng-repeat="property in NgMap.properties"
+         position="{{[property.latitude, property.longitude]}}"
+         data="{{data[$index]}}"
+         on-click="showData()";
+         title="pos: {{property.displayable_address}}"></marker>
+
+       </ng-map>
+
     </div>
   </div>
 </div>
