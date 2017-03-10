@@ -12,7 +12,14 @@
             templateUrl: './app/components/home/home-view.html',
             controller: 'HomeController',
             controllerAs: 'Home'
-        })    
+        })
+
+        .state('ngmap', {
+            url: '/ng-map',
+            templateUrl: './app/components/ngmap/ngmap-view.html',
+            controller: 'NgMapController',
+            controllerAs: 'NgMap'
+        })
 
         $urlRouterProvider.otherwise('/');
     }]);

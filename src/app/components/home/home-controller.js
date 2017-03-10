@@ -11,6 +11,8 @@
 
 
         self.showDetails = function(locationReference) {
+          console.log(ngGPlacesAPI);
+          console.log(locationReference);
           ngGPlacesAPI.placeDetails({reference: locationReference})
           .then(function (result) {
               self.details = result;
@@ -28,7 +30,7 @@
         });
 
         $scope.circles = [
-         {
+        {
              id: 1,
              center: {
                  latitude: 51.608403,

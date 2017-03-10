@@ -64,6 +64,7 @@
                 <p>Address: {{ Home.details.formatted_address }}</p>
                 <p>Phone:{{ Home.details.formatted_phone_number }}</p>
                 <p>Website:{{ Home.details.website }}</p>
+                <pre>{{ Home.details | json }}</pre>
               </div>
 
 
